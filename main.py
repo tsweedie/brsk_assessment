@@ -42,9 +42,16 @@ def run(hash_tab, i):
         length = len(w)
         index = letter + str(length)
 
-        l = hash_tab[index]
+        if index not in hash_tab.keys():
+            hash_tab[index] = [w]
+        else:
+            hash_tab[index].append(w)
 
-        new_sentence += l[random.randint(0, len(l)-1)] + " "
+        try:
+            l = hash_tab[index]
+            new_sentence += l[random.randint(0, len(l) - 1)] + " "
+        except KeyError:
+            new_sentence += w  + " "
 
     return new_sentence
 
