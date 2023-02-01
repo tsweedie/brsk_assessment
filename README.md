@@ -1,7 +1,7 @@
 # Tshidi's Scrabble Assessment
 
 ## How to:
-1. In your terminal navigate to the `ScrabbleAssessment` project folder
+1. In your terminal navigate to the `brsk_assessment` project folder
 2. run `python main.py`
 3. You can enter your scrabble sentences or `asdf` to exit the program.
 
