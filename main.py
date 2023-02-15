@@ -10,7 +10,7 @@ def generate_data(source, output):
         corn = f.readlines()
 
     for w in corn:
-        w.strip()
+        w = w.strip()
         letter = w[0]
         length = len(w)
         index = letter + str(length)
@@ -42,11 +42,6 @@ def run(hash_tab, i):
         length = len(w)
         index = letter + str(length)
 
-        if index not in hash_tab.keys():
-            hash_tab[index] = [w]
-        else:
-            hash_tab[index].append(w)
-
         try:
             l = hash_tab[index]
             new_sentence += l[random.randint(0, len(l) - 1)] + " "
@@ -58,7 +53,7 @@ def run(hash_tab, i):
 
 if __name__ == '__main__':
     # Uncomment to regenerate hash_table JSON
-    # generate_data('corncob_lowercase.txt', 'hash_table.json')
+    generate_data('corncob_lowercase.txt', 'hash_table.json')
 
     hash_t = load_data('hash_table.json')
     print("Enter scrabble sentence or 'asdf' to exit:")
